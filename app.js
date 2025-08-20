@@ -15,7 +15,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
+console.log(process.env)
 // Montar las rutas bajo /apinterna
 app.use('/apinterna', usuarioRoutes);
 
