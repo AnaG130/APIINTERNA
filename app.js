@@ -12,7 +12,10 @@ const transaccionesRoutes = require('./src/Routes/transaccionesRoutes');
 const bodyParser = require('body-parser');
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5086', // Cambia esta URL al dominio de tu frontend
+}));
+
 app.use(express.json());
 
 console.log(process.env)
@@ -50,7 +53,7 @@ app.use((err, req, res, next) => {
     });
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
